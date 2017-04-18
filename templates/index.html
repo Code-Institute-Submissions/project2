@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Visitor Attractions Dashboard</title>
+   <link rel="stylesheet" href="{{ url_for ('static',
+         filename='lib/css/bootstrap.min.css')}}">
+   <link rel="stylesheet" href="{{ url_for ('static',
+         filename='lib/css/keen-dashboards.css')}}">
+   <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/dc.css')}}">
+   <link rel="stylesheet" href="{{ url_for ('static', filename='css/custom.css')}}">
+
+ </head>
+<body class="application">
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <!-- inverse provides black navbar-->
+    <!--for a full width container, spanning the entire width of the viewport.-->
+   <div class="container-fluid">
+       <div class="navbar-header">
+           <a class="navbar-brand" href="./">2015 Survey of Visits to Visitor Attractions Dashboard</a>
+       </div>
+   </div>
+</div>
+
+<div  id="outer" class="container-fluid">
+   <div class="row">
+       <div class="col-sm-8">
+           <div class="row">
+
+               <!-- region bar chart -->
+               <div class="col-sm-12">
+                   <div class="chart-wrapper">
+                       <div class="chart-title">
+                           Attractions visited in each Region
+                       </div>
+                       <div class="chart-stage">
+                           <div id="region-row-chart"></div>
+                       </div>
+                   </div>
+               </div>
+               <!-- region bar chart -->
+
+               <!-- Paid Pie -->
+               <div class="col-sm-6">
+                   <div class="chart-wrapper">
+                       <div class="chart-title">
+                           Charges 2015
+                       </div>
+                       <div class="chart-stage">
+                           <div id="paid-chart"></div>
+                       </div>
+                   </div>
+               </div>
+               <!-- Paid Pie -->
+
+                 <!-- charges pie-->
+               <div class="col-sm-6">
+                   <div class="chart-wrapper">
+                       <div class="chart-title">
+                           Charge bands
+                       </div>
+                       <div class="chart-stage">
+                           <div id="charges-chart"></div>
+                       </div>
+                   </div>
+               </div>
+               <!-- charges pie -->
+
+           </div>
+       </div>
+
+      <!-- category bar chart-->
+       <div class="col-sm-3">
+           <div class="chart-wrapper">
+               <div class="chart-title">
+                   Attraction Categories
+               </div>
+               <div class="chart-stage">
+                   <div id="category-row-chart"></div>
+               </div>
+           </div>
+       </div>
+       <!-- category bar chart -->
+
+
+
+       <!-- menu select/cru -->
+       <div class="col-sm-4">
+           <div class="chart-wrapper">
+               <div class="chart-title">
+                   Coastal/Urban/Rural
+               </div>
+               <div class="chart-stage">
+                   <div id="menu-select"></div>
+               </div>
+           </div>
+       </div>
+       <!-- menu select/region -->
+
+       <!-- Metric 1 -->
+       <div class="col-sm-5">
+           <div class="chart-wrapper">
+               <div class="chart-title">
+                   Total Number of Attractions surveyed
+               </div>
+               <div class="chart-stage" style=" background: pink;
+                   position: relative;
+                   font-size: 29px;
+                   color: white;
+                   vertical-align: middle;
+                   text-align: center;
+                   padding-top: 12px;
+                   padding-bottom: 0px;">
+                   <div id="number-attractions-nd"></div>
+               </div>
+
+           </div>
+       </div>
+       <!-- Metric 1 -->
+
+       <!-- Metric 2 2013 visitors-->
+       <div class="col-sm-2">
+           <div class="chart-wrapper">
+               <div class="chart-title">
+                   Total Number of visitors in 2013
+               </div>
+               <div class="chart-stage" style=" background: pink;">
+                   <div id="total-2013visitors-nd"></div>
+               </div>
+           </div>
+       </div>
+       <!-- Metric 2 -->
+
+       <!-- Metric 3 2014 visitors-->
+       <div class="col-sm-2">
+           <div class="chart-wrapper">
+               <div class="chart-title">
+                   Total Number of visitors in 2014
+               </div>
+               <div class="chart-stage" style=" background: pink;">
+                   <div id="total-2014visitors-nd"></div>
+               </div>
+           </div>
+       </div>
+       <!-- Metric 3 -->
+        <!-- Metric 4 2015 visitors-->
+       <div class="col-sm-2">
+           <div class="chart-wrapper">
+               <div class="chart-title">
+                   Total Number of visitors in 2015
+               </div>
+               <div class="chart-stage" style=" background: pink;">
+                   <div id="total-2015visitors-nd"></div>
+               </div>
+           </div>
+       </div>
+       <!-- Metric 4-->
+
+   </div>
+</div>
+
+<hr>
+<p class="small text-muted"> Kashmir Kalirai</a></p>
+
+</div>
+<script src="{{ url_for ('static', filename='lib/js/jquery.min.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/bootstrap.min.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/crossfilter.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/d3.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/dc.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/queue.js')}}"></script>
+
+<script src="{{ url_for ('static', filename='lib/js/keen.min.js')}}"></script>
+<script src="{{ url_for ('static', filename='js/graph.js')}}"></script>
+</body>
+</html>
