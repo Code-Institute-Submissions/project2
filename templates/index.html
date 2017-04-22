@@ -8,11 +8,16 @@
          filename='lib/css/keen-dashboards.css')}}">
    <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/dc.css')}}">
    <link rel="stylesheet" href="{{ url_for ('static', filename='css/custom.css')}}">
+   <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/introjs.css')}}">
 
- </head>
+
+</head>
 <body class="application">
 
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="pull-right">
+        <button class="intro_button" type="button" autofocus onclick="javascript:introJs().start();">Start Tour!</button>
+    </div>
     <!-- inverse provides black navbar-->
     <!--for a full width container, spanning the entire width of the viewport.-->
    <div class="container-fluid">
@@ -25,42 +30,55 @@
 <div  id="outer" class="container-fluid">
    <div class="row">
        <div class="col-sm-8">
-           <div class="row">
+           <div class="row" >
 
-               <!-- region bar chart -->
-               <div class="col-sm-12">
+               <!-- region by attraction bar chart  -->
+               <div class="col-sm-6" >
                    <div class="chart-wrapper">
                        <div class="chart-title">
-                           Attractions visited in each Region
+                           Total Attractions per Region
                        </div>
-                       <div class="chart-stage">
-                           <div id="region-row-chart"></div>
+                       <div class="chart-stage" >
+                           <div id="regionbyattractions-row-chart" data-step="1" data-intro="The visitor attractions in this survey are those who chose to participate. Visitor attractions grouped by region." style="font-weight: normal" data-position="right" ></div>
                        </div>
                    </div>
                </div>
-               <!-- region bar chart -->
+               <!-- region by attractions bar chart -->
 
-               <!-- Paid Pie -->
+               <!-- region by visits bar chart -->
                <div class="col-sm-6">
                    <div class="chart-wrapper">
                        <div class="chart-title">
-                           Charges 2015
+                           Total Visits per region
                        </div>
                        <div class="chart-stage">
-                           <div id="paid-chart"></div>
+                           <div id="region-visits-row-chart" data-step="2" data-intro="Total number of visits in each region. Hover over region to get total for that region." style="font-weight: normal" data-position="right"></div>
                        </div>
                    </div>
                </div>
-               <!-- Paid Pie -->
+               <!-- region by visits bar chart -->
+
+               <!-- composite chart -->
+               <div class="col-sm-6">
+                   <div class="chart-wrapper">
+                       <div class="chart-title">
+                           composite chart
+                       </div>
+                       <div class="chart-stage">
+                           <div id="compositeVisits-chart" data-step="3" data-intro="Composite" style="font-weight: normal" data-position="right"></div>
+                       </div>
+                   </div>
+               </div>
+               <!-- composite chart -->
 
                  <!-- charges pie-->
                <div class="col-sm-6">
                    <div class="chart-wrapper">
                        <div class="chart-title">
-                           Charge bands
+                           Total attractions per price band
                        </div>
                        <div class="chart-stage">
-                           <div id="charges-chart"></div>
+                           <div id="charges-chart" data-step="4" data-intro="Visitor attractions grouped by entrance fees." style="font-weight: normal" data-position="right"></div>
                        </div>
                    </div>
                </div>
@@ -73,10 +91,10 @@
        <div class="col-sm-3">
            <div class="chart-wrapper">
                <div class="chart-title">
-                   Attraction Categories
+                   Total attractions per Category
                </div>
                <div class="chart-stage">
-                   <div id="category-row-chart"></div>
+                   <div id="category-row-chart" data-step="5" data-intro="Visitor attractions broken down by category." style="font-weight: normal" data-position="right"></div>
                </div>
            </div>
        </div>
@@ -85,17 +103,17 @@
 
 
        <!-- menu select/cru -->
-       <div class="col-sm-4">
+       <div class="col-sm-2">
            <div class="chart-wrapper">
                <div class="chart-title">
-                   Coastal/Urban/Rural
+                   Total Visits to Coastal/Urban/Rural attractions
                </div>
-               <div class="chart-stage">
-                   <div id="menu-select"></div>
+               <div class="chart-stage" >
+                   <div id="menu-select" data-step="6" data-intro="Total visits grouped by rural/urban/coastal type." style="font-weight: normal" data-position="right"></div>
                </div>
            </div>
        </div>
-       <!-- menu select/region -->
+       <!-- menu select/cru-->
 
        <!-- Metric 1 -->
        <div class="col-sm-5">
@@ -160,9 +178,9 @@
 </div>
 
 <hr>
-<p class="small text-muted"> Kashmir Kalirai</a></p>
+<p class="small text-muted"> Kashmir Kalirai 2017 </a></p>
 
-</div>
+
 <script src="{{ url_for ('static', filename='lib/js/jquery.min.js')}}"></script>
 <script src="{{ url_for ('static', filename='lib/js/bootstrap.min.js')}}"></script>
 <script src="{{ url_for ('static', filename='lib/js/crossfilter.js')}}"></script>
@@ -172,5 +190,7 @@
 
 <script src="{{ url_for ('static', filename='lib/js/keen.min.js')}}"></script>
 <script src="{{ url_for ('static', filename='js/graph.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/intro.js' )}}" type="text/javascript"></script>
+
 </body>
 </html>

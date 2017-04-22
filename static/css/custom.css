@@ -16,6 +16,10 @@
    fill: black;
    font-size: 12px;
 }
+#region-visits-row-chart {
+   fill:blue;
+   background-color:#ddd;
+}
 
 #total-projects {
    background: #33CC99;
@@ -42,9 +46,6 @@
    padding-top: 12px;
    padding-bottom: 0px;
 }
-.dc-charges-chart {
-   color:pink
-}
 
 .dc-select-menu {
    background: #33CC99;
@@ -53,7 +54,7 @@
    position: relative;
    height: 31px;
    font-size: 15px;
-   color: black;
+   color: white;
    vertical-align: middle;
    text-align: center;
    padding-top: 4px;
