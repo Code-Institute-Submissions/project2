@@ -102,9 +102,9 @@ function makeGraphs(error, attractionsJson) {
        .group(totalVisitors2013)
 
     RegionByAttractionsChart
-       .width(400)
+       .width(420)
        .height(200)
-       .margins({top: 10, right: 50, bottom: 30, left: 50})
+       .margins({top: 10, right: 50, bottom: 30, left: 10})
        .dimension(regionDim)
        .group(numAttractionsByRegion)
        .ordinalColors(['#3182bd', '#6baed6', '#9ecae1',  '#dadaeb'])
@@ -113,14 +113,14 @@ function makeGraphs(error, attractionsJson) {
     RegionByVisitsBarChart
        .width(400)
        .height(200)
-       .margins({top: 10, right: 50, bottom: 30, left: 80})
+       .margins({top: 10, right: 50, bottom: 30, left: 70})
        .dimension(regionDim)
        .group(numVisitsByRegion)
        .xUnits(dc.units.ordinal) // Tell dc.js that we're using an ordinal x-axis
        .x(d3.scale.ordinal())
        .colors(d3.scale.ordinal().range(["blue","red"]))
        .transitionDuration(2500)
-       .yAxisLabel("No. of visits")
+       //.yAxisLabel("No. of visits")
        .xAxisLabel("Region")
        .yAxis().ticks(4);
 
