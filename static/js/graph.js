@@ -7,7 +7,6 @@ function makeGraphs(error, attractionsJson) {
    //Clean attractionsJson data
    var visitorAttractionsData = attractionsJson;
 
-
    //Create a Crossfilter instance
    var ndx = crossfilter(visitorAttractionsData);
 
@@ -42,10 +41,10 @@ function makeGraphs(error, attractionsJson) {
    var numAttractionsByChargeBand = chargeDim.group();
    var totalVisitorsByCru = cruDim.group().reduceSum(function (d) {return d["2015_visitors"]});
 
-   totalVisitorsByCru =(totalVisitorsByCru / 1000,000).toFixed(3) * 1000,000;
-   var grp2015 = categoryDim.group().reduceSum(function(d) {return d["2015_visitors"]});
-   var grp2014 = categoryDim.group().reduceSum(function(d) {return d["2014_visitors"]});
-   var max_visitors = grp2015.top(1)[0].value;
+   //totalVisitorsByCru =(totalVisitorsByCru / 1000000).toFixed(3) * 1000000;
+  // var totalVisitsByCategory2015 = categoryDim.group().reduceSum(function(d) {return d["2015_visitors"]});
+  // var totalVisitsByCategory2014 = categoryDim.group().reduceSum(function(d) {return d["2014_visitors"]});
+  // var max_visitors = totalVisitsByCategory2015.top(1)[0].value;
 
    var all = ndx.groupAll();
    var totalVisitors2015 = ndx.groupAll().reduceSum(function (d) {
@@ -68,9 +67,9 @@ function makeGraphs(error, attractionsJson) {
    var totalVisitors2014ND = dc.numberDisplay("#total-2014visitors-nd");
    var totalVisitors2013ND = dc.numberDisplay("#total-2013visitors-nd");
    var ChargeChart = dc.pieChart("#charges-chart");
-   var compositeVisits = dc.compositeChart("#compositeVisits-chart");
 
-   selectField = dc.selectMenu('#menu-select')
+
+   selectField = dc.selectMenu("#menu-select")
        .dimension(cruDim)
        .group(totalVisitorsByCru);
 
@@ -108,7 +107,8 @@ function makeGraphs(error, attractionsJson) {
        .margins({top: 10, right: 50, bottom: 30, left: 50})
        .dimension(regionDim)
        .group(numAttractionsByRegion)
-       .xAxis().ticks(4);
+       .ordinalColors(['#3182bd', '#6baed6', '#9ecae1',  '#dadaeb'])
+       .xAxis().ticks(6);
 
     RegionByVisitsBarChart
        .width(400)
@@ -116,18 +116,21 @@ function makeGraphs(error, attractionsJson) {
        .margins({top: 10, right: 50, bottom: 30, left: 80})
        .dimension(regionDim)
        .group(numVisitsByRegion)
-        .xUnits(dc.units.ordinal) // Tell dc.js that we're using an ordinal x-axis
-        .x(d3.scale.ordinal())
-        .colors(d3.scale.ordinal().range(["blue","red"]))
-        .transitionDuration(2500)
+       .xUnits(dc.units.ordinal) // Tell dc.js that we're using an ordinal x-axis
+       .x(d3.scale.ordinal())
+       .colors(d3.scale.ordinal().range(["blue","red"]))
+       .transitionDuration(2500)
+       .yAxisLabel("No. of visits")
        .xAxisLabel("Region")
        .yAxis().ticks(4);
 
+    //array of colors doesnt work with piechart
+    var colorScale = d3.scale.ordinal().range(["DarkGreen","DarkKhaki","DarkMagenta","DarkOliveGreen","Darkorange","DarkOrchid","DarkRed","DarkSalmon","DarkSeaGreen","DarkSlateBlue"]);
 
    ChargeChart
-       .height(220)
-       .radius(110)
+       .radius(90)
        .innerRadius(20)
+       .colors(colorScale)
        .transitionDuration(2500)
        .dimension(chargeDim)
        .group(numAttractionsByChargeBand);
@@ -139,27 +142,6 @@ function makeGraphs(error, attractionsJson) {
        .group(numAttractionsByCategory)
        .xAxis().ticks(4);
 
-  // compositeVisits
-  //      .width(500)
-  //      .height(220)
-  //     .margins({top: 10, right: 50, bottom: 30, left: 70})
-   //     .x(d3.scale.linear().domain([0,max_visitors]))
-  //      .yAxisLabel("Categories")
-        //legend(dc.legend().x(80).y(20).itemHeight(13).gap(5))
-  //      .renderHorizontalGridLines(true)
-  //      .compose([
-  //          dc.lineChart(compositeVisits)
-  //              .dimension(grp2015)
-  //              .colors('red')
-  //              .group(categoryDim, "Top Line")
-   //             .dashStyle([2,2]),
-  //          dc.lineChart(compositeVisits)
-  //              .dimension(grp2014)
-  //              .colors('blue')
-  //              .group(categoryDim, "Bottom Line")
-  //              .dashStyle([5,5])
-  //          ])
-  //      .brushOn(false);
 
    dc.renderAll();
 }

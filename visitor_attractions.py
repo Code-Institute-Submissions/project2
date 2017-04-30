@@ -46,5 +46,9 @@ def visit_attractions():
         # Convert projects to a list in a JSON object and return the JSON data
         return json.dumps(list(attractions))
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 if __name__ == "__main__":
     app.run(debug=True)

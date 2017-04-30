@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Visitor Attractions Dashboard</title>
+   <link rel="stylesheet" href="{{ url_for ('static',
+         filename='lib/css/bootstrap.min.css')}}">
+   <link rel="stylesheet" href="{{ url_for ('static',
+         filename='lib/css/keen-dashboards.css')}}">
+   <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/dc.css')}}">
+   <link rel="stylesheet" href="{{ url_for ('static', filename='css/custom.css')}}">
+   <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/introjs.css')}}">
+
+
+</head>
+<body class="application">
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="pull-right">
+        <button class="intro_button" type="button" autofocus onclick="javascript:introJs().start();">Start Tour!</button>
+    </div>
+    <!-- inverse provides black navbar-->
+    <!--for a full width container, spanning the entire width of the viewport.-->
+   <div class="container-fluid">
+       <div class="navbar-header">
+           <a class="navbar-brand" href="./">2015 Survey of Visits to Visitor Attractions Dashboard</a>
+       </div>
+   </div>
+</div>
+
+<div  id="outer" class="container-fluid">
+   <div class="row">
+       <div class="col-sm-8">
+           <div class="row" >
+
+               <!-- region by attraction bar chart  -->
+               <div class="col-sm-6" >
+                   <div class="chart-wrapper">
+                       <div class="chart-title">
+                           Total Attractions per Region
+                       </div>
+                       <div class="chart-stage" >
+                           <div id="regionbyattractions-row-chart" data-step="1" data-intro="The visitor attractions in this survey are those who chose to participate. Visitor attractions grouped by region." style="font-weight: normal" data-position="right" ></div>
+                       </div>
+                   </div>
+               </div>
+               <!-- region by attractions bar chart -->
+
+               <!-- region by visits bar chart -->
+               <div class="col-sm-6">
+                   <div class="chart-wrapper">
+                       <div class="chart-title">
+                           Total Visits per region
+                       </div>
+                       <div class="chart-stage">
+                           <div id="region-visits-row-chart" data-step="2" data-intro="Total number of visits in each region. Hover over region to get total for that region." style="font-weight: normal" data-position="right"></div>
+                       </div>
+                   </div>
+               </div>
+               <!-- region by visits bar chart -->
+
+               <!-- menu select/cru -->
+               <div class="col-sm-6">
+                   <div class="chart-wrapper">
+                       <div class="chart-title">
+                           Total Visits to Coastal/Urban/Rural attractions
+                       </div>
+                       <div class="chart-stage">
+                            <div id="menu-select" data-step="6" data-intro="Total visits grouped by rural/urban/coastal type." style="font-weight: normal" data-position="right"></div>
+                        </div>
+                   </div>
+               </div>
+               <!-- menu select/cru -->
+
+                 <!-- charges pie-->
+               <div class="col-sm-6">
+                   <div class="chart-wrapper">
+                       <div class="chart-title">
+                           Total attractions per price band
+                       </div>
+                       <div class="chart-stage">
+                           <div id="charges-chart" data-step="4" data-intro="Visitor attractions grouped by entrance fees." style="font-weight: normal" data-position="right"></div>
+                       </div>
+                   </div>
+               </div>
+               <!-- charges pie -->
+
+           </div>
+       </div>
+
+      <!-- category bar chart-->
+       <div class="col-sm-3">
+           <div class="chart-wrapper">
+               <div class="chart-title">
+                   Total attractions per Category
+               </div>
+               <div class="chart-stage">
+                   <div id="category-row-chart" data-step="5" data-intro="Visitor attractions broken down by category." style="font-weight: normal" data-position="right"></div>
+               </div>
+           </div>
+       </div>
+       <!-- category bar chart -->
+
+
+
+       <!-- Metric 1 -->
+       <div class="col-sm-5">
+           <div class="chart-wrapper">
+               <div class="chart-title">
+                   Total Number of Attractions surveyed
+               </div>
+               <div class="chart-stage" style=" background: pink;
+                   position: relative;
+                   font-size: 29px;
+                   color: white;
+                   vertical-align: middle;
+                   text-align: center;
+                   padding-top: 12px;
+                   padding-bottom: 0px;">
+                   <div id="number-attractions-nd"></div>
+               </div>
+
+           </div>
+       </div>
+       <!-- Metric 1 -->
+
+       <!-- Metric 2 2013 visitors-->
+       <div class="col-sm-2">
+           <div class="chart-wrapper">
+               <div class="chart-title">
+                   Total Number of visitors in 2013
+               </div>
+               <div class="chart-stage" style=" background: pink;">
+                   <div id="total-2013visitors-nd"></div>
+               </div>
+           </div>
+       </div>
+       <!-- Metric 2 -->
+
+       <!-- Metric 3 2014 visitors-->
+       <div class="col-sm-2">
+           <div class="chart-wrapper">
+               <div class="chart-title">
+                   Total Number of visitors in 2014
+               </div>
+               <div class="chart-stage" style=" background: pink;">
+                   <div id="total-2014visitors-nd"></div>
+               </div>
+           </div>
+       </div>
+       <!-- Metric 3 -->
+        <!-- Metric 4 2015 visitors-->
+       <div class="col-sm-2">
+           <div class="chart-wrapper">
+               <div class="chart-title">
+                   Total Number of visitors in 2015
+               </div>
+               <div class="chart-stage" style=" background: pink;">
+                   <div id="total-2015visitors-nd"></div>
+               </div>
+           </div>
+       </div>
+       <!-- Metric 4-->
+
+   </div>
+</div>
+
+<hr>
+<p class="small text-muted"> Kashmir Kalirai 2017 </a></p>
+
+
+<script src="{{ url_for ('static', filename='lib/js/jquery.min.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/bootstrap.min.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/crossfilter.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/d3.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/dc.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/queue.js')}}"></script>
+
+<script src="{{ url_for ('static', filename='lib/js/keen.min.js')}}"></script>
+<script src="{{ url_for ('static', filename='js/graph.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/intro.js' )}}" type="text/javascript"></script>
+
+</body>
+</html>
