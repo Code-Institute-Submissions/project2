@@ -1,46 +1,52 @@
 #number-attractions-nd {
-   font-size: 30px;
+   font-size: 15px;
 }
 
 #total-2015visitors-nd {
-   font-size: 30px;
+   font-size: 15px;
 }
 #total-2014visitors-nd {
-   font-size: 30px;
+   font-size: 15px;
 }
 
 #total-2013visitors-nd {
-   font-size: 30px;
+   font-size: 15px;
+}
+#total-2012visitors-nd {
+   font-size: 15px;
+}
+#total-2011visitors-nd {
+   font-size: 15px;
 }
 .dc-chart g.row text {
    fill: black;
    font-size: 12px;
 }
-#region-visits-row-chart {
-   fill:blue;
-   background-color:#ddd;
+.chart-wrapper {
+'#3182bd', '#6baed6', '#9ecae1',  '#dadaeb'
 }
 
-#net-donations {
-   background: #33CC99;
-   width: 200px;
-   position: relative;
-   height: 60px;
-   font-size: 29px;
-   vertical-align: middle;
-   text-align: center;
-   padding-top: 12px;
-   padding-bottom: 0px;
+.chart-wrapper .chart-title {
+   background: #6baed6;
+  color: darkblue;
+  font-size: 10px;
+  font-weight: bold;
 }
 
+.navbar-inverse {
+  background-color:#6baed6;
+  border-color: #333;
+}
+#main-title  {
+   font-size: 20px;
+}
 #menu-select {
-   background: #33CC99;
+   background: #6baed6;
    position: relative;
-   height: 50px;
-   font-size: 29px;
+   height: 30px;
+   font-size: 15px;
    color: black;
    vertical-align: middle;
-   text-align: right;
    padding-top: 12px;
    padding-bottom: 0px;
 }

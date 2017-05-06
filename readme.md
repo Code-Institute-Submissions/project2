@@ -28,13 +28,13 @@ Some of the tech used includes:
 	- We use **Jinga2** as the templating engine to seperate content from design. The 2 child templates are about.html and index.html. 
 - [Bootstrap](http://getbootstrap.com/)
     - We use **Bootstrap** to give our project a simple, responsive layout
-- [MongoDB]
+- [MongoDB](https://www.mongodb.com/download-center#production)
 	- We use **MongoDB for easy storage and fast access.
-- [Crossfilter]
+- [Crossfilter](https://github.com/square/crossfilter)
 	- We use **Crossfilter** to group and filter data quickly.
-- [D3]
+- [D3](https://github.com/d3/d3)
 	- We use **D3** to visualise the data.
-- [DC]
+- [DC](https://github.com/dc-js/dc.js)
 	- We use **DC** to make the dashboard interactive.
 
 
@@ -42,8 +42,8 @@ Some of the tech used includes:
 
  
 ### Getting the code up and running
-1. Firstly you will need to clone this repository by running the ```git clone <project's Github URL>``` command
-2. After you've that you'll need to make sure that you have **npm** and **bower** installed
+1. Firstly you will need to clone this repository by running the ```git clone https://github.com/Kazkal/project2``` command
+2. After you've that you'll need to make sure that you have **bootstrap** and **bower** installed
   1. You can get **npm** by installing Node from [here](https://nodejs.org/en/)
   2. Once you've done this you'll need to run the following command:
      `npm install -g bower # this may require sudo on Mac/Linux`

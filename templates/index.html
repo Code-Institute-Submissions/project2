@@ -7,50 +7,36 @@
        <div class="col-sm-8">
            <div class="row" >
 
-               <!-- region by attraction bar chart  -->
+               <!-- attractions per region bar chart -->
                <div class="col-sm-6" >
                    <div class="chart-wrapper">
                        <div class="chart-title">
-                           Total Attractions per Region
+                           Total attractions per region
                        </div>
                        <div class="chart-stage" >
                            <div id="regionbyattractions-row-chart" data-step="1" data-intro="The visitor attractions in this survey are those who chose to participate. Visitor attractions grouped by region." style="font-weight: normal" data-position="right" ></div>
                        </div>
                    </div>
                </div>
-               <!-- region by attractions bar chart -->
 
-               <!-- region by visits bar chart -->
+               <!-- Total visits per category row chart -->
                <div class="col-sm-6">
-                   <div class="chart-wrapper">
+                    <div class="chart-wrapper">
                        <div class="chart-title">
-                           Total Visits per region
+                           Total visits per category
                        </div>
                        <div class="chart-stage">
-                           <div id="region-visits-row-chart" data-step="2" data-intro="Total number of visits in each region. Hover over region to get total for that region." style="font-weight: normal" data-position="right"></div>
+                           <div id="category-row-chart" data-step="3" data-intro="Visits broken down by category." style="font-weight: normal" data-position="right"></div>
                        </div>
                    </div>
-               </div>
-               <!-- region by visits bar chart -->
 
-               <!-- menu select/cru -->
+               </div>
+
+               <!-- entrance fees pie-->
                <div class="col-sm-6">
                    <div class="chart-wrapper">
                        <div class="chart-title">
-                           Total Visits to Coastal/Urban/Rural attractions
-                       </div>
-                       <div class="chart-stage">
-                            <div id="menu-select" data-step="4" data-intro="Total visits grouped by rural/urban/coastal type." style="font-weight: normal" data-position="right"></div>
-                        </div>
-                   </div>
-               </div>
-               <!-- menu select/cru -->
-
-                 <!-- charges pie-->
-               <div class="col-sm-6">
-                   <div class="chart-wrapper">
-                       <div class="chart-title">
-                           Total attractions per price band
+                           Total attractions by entrance fee
                        </div>
                        <div class="chart-stage">
                            <div id="charges-chart" data-step="5" data-intro="Visitor attractions grouped by entrance fees." style="font-weight: normal" data-position="right"></div>
@@ -59,82 +45,147 @@
                </div>
                <!-- charges pie -->
 
-           </div>
+
+               <!--select menu!-->
+               <div class="col-sm-3">
+                    <div class="chart-wrapper">
+                          <div class="chart-title">
+                               Total visits to Coastal/Urban/Rural attractions
+                           </div>
+                           <div class="chart-stage">
+                                <div id="menu-select" data-step="4" data-intro="Total visits grouped by rural/urban/coastal type." style="font-weight: normal" data-position="right"></div>
+                           </div>
+                    </div>
+               </div>
+
+                <!--description!-->
+               <div class="col-sm-3">
+                    <div>
+                        <div id="main-title" style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif">
+                           Tourism in England in 2015
+                        </div>
+                       <div >
+                           Where did people head in their leisure time? Which regions drew the crowds? What types of attractions were most popular?
+                       </div>
+                    </div>
+               </div>
+
+
+            </div>
        </div>
 
-      <!-- category bar chart-->
-       <div class="col-sm-3">
+      <!-- visits by region bar chart-->
+       <div class="col-sm-4">
            <div class="chart-wrapper">
                <div class="chart-title">
-                   Total attractions per Category
+                   Total visits per region
                </div>
                <div class="chart-stage">
-                   <div id="category-row-chart" data-step="3" data-intro="Visitor attractions broken down by category." style="font-weight: normal" data-position="right"></div>
+                   <div id="region-visits-row-chart" data-step="2" data-intro="Total number of visits in each region. Hover over region to get total for that region." style="font-weight: normal" data-position="right"></div>
                </div>
            </div>
        </div>
-       <!-- category bar chart -->
+       <!-- visits by region bar chart -->
+
+         <!-- description-->
+       <div class="col-sm-3">
+
+       </div>
+       <!--  -->
 
 
+       <div class="row">
+           <div class="col-sm-12">
+                <div class="row" >
 
-       <!-- Metric 1 -->
-       <div class="col-sm-5">
-           <div class="chart-wrapper">
-               <div class="chart-title">
-                   Total Number of Attractions surveyed
-               </div>
-               <div class="chart-stage" style=" background: pink;
-                   position: relative;
-                   font-size: 29px;
-                   color: white;
-                   vertical-align: middle;
-                   text-align: center;
-                   padding-top: 12px;
-                   padding-bottom: 0px;">
-                   <div id="number-attractions-nd"></div>
-               </div>
+                   <!-- Metric 1 -->
+                   <div class="col-sm-2">
+                       <div class="chart-wrapper">
+                           <div class="chart-title">
+                               Total number of attractions surveyed
+                           </div>
+                           <div class="chart-stage" style=" background:#9ecae1;
+                               position: relative;
+                               font-size: 29px;
+                               color: white;
+                               vertical-align: middle;
+                               text-align: center;
+                               padding-top: 12px;
+                               padding-bottom: 0px;">
+                               <div id="number-attractions-nd"></div>
+                           </div>
 
+                       </div>
+                   </div>
+                   <!-- Metric 1 -->
+
+                    <!--  2011 visits-->
+                   <div class="col-sm-2">
+                       <div class="chart-wrapper">
+                           <div class="chart-title">
+                               Total visits in 2011
+                           </div>
+                           <div class="chart-stage" style=" background: #9ecae1;">
+                               <div id="total-2011visitors-nd"></div>
+                           </div>
+                       </div>
+                   </div>
+                   <!-- 2011 visits -->
+
+                   <!-- 2012 visits-->
+                   <div class="col-sm-2">
+                       <div class="chart-wrapper">
+                           <div class="chart-title">
+                               Total visits in 2012
+                           </div>
+                           <div class="chart-stage" style=" background: #9ecae1;">
+                               <div id="total-2012visitors-nd"></div>
+                           </div>
+                       </div>
+                   </div>
+                   <!-- 2012 visits -->
+
+                   <!--  2013 visits-->
+                   <div class="col-sm-2">
+                       <div class="chart-wrapper">
+                           <div class="chart-title">
+                               Total visits in 2013
+                           </div>
+                           <div class="chart-stage" style=" background: #9ecae1;">
+                               <div id="total-2013visitors-nd"></div>
+                           </div>
+                       </div>
+                   </div>
+                   <!-- 2013 visits -->
+
+                   <!-- 2014 visits-->
+                   <div class="col-sm-2">
+                       <div class="chart-wrapper">
+                           <div class="chart-title">
+                               Total visits in 2014
+                           </div>
+                           <div class="chart-stage" style=" background: #9ecae1;">
+                               <div id="total-2014visitors-nd"></div>
+                           </div>
+                       </div>
+                   </div>
+                   <!-- 2014 visits -->
+
+                    <!-- 2015 visits-->
+                   <div class="col-sm-2">
+                       <div class="chart-wrapper">
+                           <div class="chart-title">
+                               Total visits in 2015
+                           </div>
+                           <div class="chart-stage" style=" background: #9ecae1;">
+                               <div id="total-2015visitors-nd"></div>
+                           </div>
+                       </div>
+                   </div>
+                   <!-- 2015 visits-->
+                </div>
            </div>
        </div>
-       <!-- Metric 1 -->
-
-       <!-- Metric 2 2013 visitors-->
-       <div class="col-sm-2">
-           <div class="chart-wrapper">
-               <div class="chart-title">
-                   Total visitors in 2013
-               </div>
-               <div class="chart-stage" style=" background: pink;">
-                   <div id="total-2013visitors-nd"></div>
-               </div>
-           </div>
-       </div>
-       <!-- Metric 2 -->
-
-       <!-- Metric 3 2014 visitors-->
-       <div class="col-sm-2">
-           <div class="chart-wrapper">
-               <div class="chart-title">
-                   Total visitors in 2014
-               </div>
-               <div class="chart-stage" style=" background: pink;">
-                   <div id="total-2014visitors-nd"></div>
-               </div>
-           </div>
-       </div>
-       <!-- Metric 3 -->
-        <!-- Metric 4 2015 visitors-->
-       <div class="col-sm-2">
-           <div class="chart-wrapper">
-               <div class="chart-title">
-                   Total visitors in 2015
-               </div>
-               <div class="chart-stage" style=" background: pink;">
-                   <div id="total-2015visitors-nd"></div>
-               </div>
-           </div>
-       </div>
-       <!-- Metric 4-->
 
    </div>
 </div>

@@ -27,12 +27,12 @@ def visit_attractions():
 
     # A constant that defines the record fields that we wish to retrieve.
     FIELDS = {
-        '_id': False, 'region': True, 'county': True,
+        '_id': False, 'attraction':True, 'region': True,
         'cru': True, 'category': True,
+        '2011_visitors': True, '2012_visitors': True,
         '2013_visitors': True, '2014_visitors': True,
-        '2015_visitors': True, 'charge': True,
-        'charge_band': True, 'size': True,
-        '2011_visitors': True, '2012_visitors': True
+        '2015_visitors': True, 'charge_band': True,
+         'size': True
     }
 
     # Open a connection to MongoDB using a with statement such that the
