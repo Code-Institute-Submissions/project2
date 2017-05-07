@@ -19,16 +19,21 @@
     <!--for a full width container, spanning the entire width of the viewport.-->
        <div class="container-fluid">
            <div class="navbar-header">
-               <a class="navbar-brand" href="./">Visitor Attractions - England</a>
+                <a class="navbar-brand" href="#">
+                    <img src="https://www.visitbritain.org/sites/all/themes/vb_corporate/logo.png" alt="Visitor Numbers 2015" height="50px">
+                </a>
            </div>
-           <div class="pull-right">
-                <button class="intro_button" type="button" autofocus onclick="javascript:introJs().start();">Start Tour!</button>
+            <div class="pull-right">
+                <button class="btn btn-info" type="button" id="tour-button" autofocus onclick="javascript:introJs().start();">Tour</button>
            </div>
+
+
            <ul class ="nav navbar-nav navbar-right">
               <li><a href="{{ url_for('index') }}">Home</a></li>
               <li><a href="{{ url_for('about') }}">About</a></li>
-              <li><a href="#">     </a></li>
+              <li><a href="#">      </a></li>
            </ul>
+
        </div>
     </div>
 

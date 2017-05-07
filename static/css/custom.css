@@ -22,9 +22,7 @@
    fill: black;
    font-size: 12px;
 }
-.chart-wrapper {
-'#3182bd', '#6baed6', '#9ecae1',  '#dadaeb'
-}
+
 
 .chart-wrapper .chart-title {
    background: #6baed6;
@@ -37,8 +35,23 @@
   background-color:#6baed6;
   border-color: #333;
 }
-#main-title  {
-   font-size: 20px;
+.navbar-brand {
+  padding: 0px;
+}
+
+.navbar-brand>img {
+   margin-left: 5px;
+    max-height=50px;
+}
+#main-title{
+    font-size:20px;
+}
+
+#description{
+   font-size: 10px;
+    color: #3182bd;
+    font-weight: 500;
+   font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 #menu-select {
    background: #6baed6;
@@ -49,6 +62,16 @@
    vertical-align: middle;
    padding-top: 12px;
    padding-bottom: 0px;
+}
+
+#about-panel{
+    background: #dadaeb;
+    /*#6baed6;#6baed6; '#3182bd', '#6baed6', '#9ecae1' - light blue,  '#dadaeb'
+    #3182bd - dark blue*/
+}
+#tour-button{
+    outline:none;
+    margin-top:10px
 }
 
 

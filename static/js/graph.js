@@ -155,8 +155,8 @@ function makeGraphs(error, attractionsJson) {
 
 
    ChargeChart
-       .height(180)
-       .radius(90)
+       .height(160)
+       .radius(80)
        .innerRadius(20)
        .colors(colorScale)
        .transitionDuration(2500)
