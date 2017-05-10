@@ -3,13 +3,25 @@
 <head>
 
    <title>Visitor Attractions Dashboard</title>
-   <link rel="stylesheet" href="{{ url_for ('static',
-         filename='lib/css/bootstrap.min.css')}}">
-   <link rel="stylesheet" href="{{ url_for ('static',
-         filename='lib/css/keen-dashboards.css')}}">
+   <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/bootstrap.min.css')}}">
+   <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/keen-dashboards.css')}}">
    <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/dc.css')}}">
    <link rel="stylesheet" href="{{ url_for ('static', filename='css/custom.css')}}">
    <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/introjs.css')}}">
+   <!--<link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename='lib/css/reset.css')}}">-->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- <style type="text/css">
+        @media screen and (max-width: 665px) {
+           nav ul li {
+                display: block;
+                width: 120px;
+                border-bottom: none;
+           }
+            #tour-button{
+                position: center;
+            }
+        }
+    </style>    -->
 </head>
 
 <body class="application">
@@ -19,21 +31,28 @@
     <!--for a full width container, spanning the entire width of the viewport.-->
        <div class="container-fluid">
            <div class="navbar-header">
+               <!--add logo-->
                 <a class="navbar-brand" href="#">
                     <img src="https://www.visitbritain.org/sites/all/themes/vb_corporate/logo.png" alt="Visitor Numbers 2015" height="50px">
                 </a>
+               <!--button instead of menu-->
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                   <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+               </button>
            </div>
-            <div class="pull-right">
-                <button class="btn btn-info" type="button" id="tour-button" autofocus onclick="javascript:introJs().start();">Tour</button>
+           <!--the content that you want to be collapsed needs to be wrapped in a <div> with classes .collapse, .navbar-collapse. -->
+           <div class="collapse navbar-collapse" id="myNavbar">
+               <button class="btn btn-info navbar-btn navbar-right" id="tour-button" autofocus onclick="javascript:introJs().start();">Tour</button>
+               <ul class ="nav navbar-nav navbar-right">
+                   <li><a href="{{ url_for('index') }}">Home</a></li>
+                   <li><a href="{{ url_for('about') }}">About</a></li>
+                   <li><a href="#">Tour</a></li>
+               </ul>
            </div>
 
-
-           <ul class ="nav navbar-nav navbar-right">
-              <li><a href="{{ url_for('index') }}">Home</a></li>
-              <li><a href="{{ url_for('about') }}">About</a></li>
-              <li><a href="#">      </a></li>
-           </ul>
-
+           <!--<button class="btn btn-danger navbar-btn">Button</button>-->
        </div>
     </div>
 
@@ -44,9 +63,10 @@
 
 
 
-    <div style="position: relative">
-      <p style="position: fixed; bottom: 0; width:100%;font-size:10px="> Kashmir Kalirai 2017</p>
-    </div>
+    <footer class="col-12">
+      <p>Kashmir Kalirai P2 2017. Copyright</p>
+    </footer>
+
 
     <script src="{{ url_for ('static', filename='lib/js/jquery.min.js')}}"></script>
     <script src="{{ url_for ('static', filename='lib/js/bootstrap.min.js')}}"></script>

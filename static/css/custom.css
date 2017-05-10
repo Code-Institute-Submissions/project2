@@ -41,10 +41,16 @@
 
 .navbar-brand>img {
    margin-left: 5px;
-    max-height=50px;
+   max-height=50px;
 }
+
+
 #main-title{
     font-size:20px;
+}
+
+.body{
+ padding-top:100px;
 }
 
 #description{
@@ -69,9 +75,18 @@
     /*#6baed6;#6baed6; '#3182bd', '#6baed6', '#9ecae1' - light blue,  '#dadaeb'
     #3182bd - dark blue*/
 }
-#tour-button{
-    outline:none;
-    margin-top:10px
+
+.footer{
+    text-align: center;
+    font-size: 8px;
+    height: 10px;
+}
+/* Portrait phones and smaller */
+@media (max-width: 767px) {
+    #total-2012visitors-nd {
+        width: 50px;
+        font-size: 10px;
+    }
 }
 
 

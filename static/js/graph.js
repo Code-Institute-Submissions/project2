@@ -28,7 +28,7 @@ function makeGraphs(error, attractionsJson) {
    //Calculate metrics
    var totalVisits2015ByRegion = regionDim.group().reduceSum(function(d) {return d["2015_visitors"]});
    var totalVisits2014ByRegion = regionDim.group().reduceSum(function(d) {return d["2014_visitors"]});
-   var totalVisits2013ByRegion = regionDim.group().reduceSum(function(d) {return d["2014_visitors"]});
+   var totalVisits2013ByRegion = regionDim.group().reduceSum(function(d) {return d["2013_visitors"]});
    var numAttractionsByRegion = regionDim.group();
    var totalVisits2014ByCategory = categoryDim.group().reduceSum(function(d) {return d["2014_visitors"]});
    var totalVisits2015ByCategory = categoryDim.group().reduceSum(function(d) {return d["2015_visitors"]});
