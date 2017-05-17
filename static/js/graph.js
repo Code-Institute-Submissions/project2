@@ -55,16 +55,16 @@ function makeGraphs(error, attractionsJson) {
 
    //Charts - define the chart types objects using DC.js library.
     // We also bind the charts to the div ID’s in index.html.
-   var RegionByAttractionsChart = dc.rowChart("#regionbyattractions-row-chart");
-   var RegionByVisitsBarChart = dc.barChart("#region-visits-row-chart");
-   var CategoryChart = dc.rowChart("#category-row-chart");
+   var RegionByAttractionsChart = dc.rowChart("#attractions-rowchart");
+   var RegionByVisitsBarChart = dc.barChart("#visitsbyregion-rowchart");
+   var CategoryChart = dc.rowChart("#visitsbycat-rowchart");
    var numberAttractionsND = dc.numberDisplay("#number-attractions-nd");
    var totalVisitors2015ND = dc.numberDisplay("#total-2015visitors-nd");
    var totalVisitors2014ND = dc.numberDisplay("#total-2014visitors-nd");
    var totalVisitors2013ND = dc.numberDisplay("#total-2013visitors-nd");
    var totalVisitors2012ND = dc.numberDisplay("#total-2012visitors-nd");
    var totalVisitors2011ND = dc.numberDisplay("#total-2011visitors-nd");
-   var ChargeChart = dc.pieChart("#charges-chart");
+   var ChargeChart = dc.pieChart("#fees-chart");
 
    selectField = dc.selectMenu("#menu-select")
        .dimension(cruDim)
@@ -119,33 +119,15 @@ function makeGraphs(error, attractionsJson) {
     var colorScale2 = ['#3182bd', '#6baed6', '#9ecae1',  '#dadaeb']
 
 
-    RegionByAttractionsChart
-       .width(420)
-       .height(200)
-       .margins({top: 10, right: 50, bottom: 30, left: 10})
-       .dimension(regionDim)
-       .group(numAttractionsByRegion)
-       .ordinalColors(colorScale2)
-       .xAxis().ticks(6);
-
-    CategoryChart
-       .width(420)
-       .height(200)
-       .dimension(categoryDim)
-       .group(totalVisits2015ByCategory)
-       //.stack(totalVisits2015ByCategory)
-       .ordinalColors(colorScale2)
-       .xAxis().ticks(5);
-
     RegionByVisitsBarChart
-       .width(350)
-       .height(350)
+       .width(320)
+       .height(320)
        .margins({top: 10, right: 50, bottom: 30, left: 70})
        .dimension(regionDim)
        .group(totalVisits2013ByRegion,"2013")
        .stack(totalVisits2014ByRegion,"2014")
        .stack(totalVisits2015ByRegion,"2015")
-       .legend(dc.legend().x(300).y(10).itemHeight(13).gap(5))
+       .legend(dc.legend().x(200).y(10).itemHeight(13).gap(5))
        .xUnits(dc.units.ordinal) // Tell dc.js that we're using an ordinal x-axis
        .x(d3.scale.ordinal())
        .colors(d3.scale.ordinal().range(colorScale2))
@@ -153,15 +135,35 @@ function makeGraphs(error, attractionsJson) {
        .xAxisLabel("Region")
        .yAxis().ticks(4);
 
+    CategoryChart
+       .width(320)
+       .height(320)
+       .dimension(categoryDim)
+       .group(totalVisits2015ByCategory)
+       //.stack(totalVisits2015ByCategory)
+       .ordinalColors(colorScale2)
+       .xAxis().ticks(5);
 
-   ChargeChart
+    RegionByAttractionsChart
+       .width(320)
+       .height(320)
+       .margins({top: 10, right: 50, bottom: 30, left: 10})
+       .dimension(regionDim)
+       .group(numAttractionsByRegion)
+       .ordinalColors(colorScale2)
+       .xAxis().ticks(6);
+
+    ChargeChart
        .height(160)
        .radius(80)
        .innerRadius(20)
        .colors(colorScale)
        .transitionDuration(2500)
        .dimension(chargeDim)
-       .group(numAttractionsByChargeBand);
+       .group(numAttractionsByChargeBand)
+       .label(function (d) {
+          return "£" + d.key;
+        });
 
    dc.renderAll();
 }

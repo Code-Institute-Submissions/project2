@@ -23,7 +23,6 @@
    font-size: 12px;
 }
 
-
 .chart-wrapper .chart-title {
    background: #6baed6;
   color: darkblue;
@@ -44,7 +43,6 @@
    max-height=50px;
 }
 
-
 #main-title{
     font-size:20px;
 }
@@ -55,8 +53,8 @@
 
 #description{
    font-size: 15px;
-    color: #3182bd;
-    font-weight: 500;
+   color: #3182bd;
+   font-weight: 500;
    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 #menu-select {
@@ -72,21 +70,13 @@
 
 #about-panel{
     background: #dadaeb;
-    /*#6baed6;#6baed6; '#3182bd', '#6baed6', '#9ecae1' - light blue,  '#dadaeb'
-    #3182bd - dark blue*/
 }
-
 .footer{
     text-align: center;
     font-size: 8px;
     height: 10px;
 }
-/* Portrait phones and smaller */
-@media (max-width: 767px) {
-    #total-2012visitors-nd {
-        width: 50px;
-        font-size: 10px;
-    }
-}
+
+
 
 

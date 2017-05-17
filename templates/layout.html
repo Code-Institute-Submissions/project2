@@ -33,7 +33,9 @@
            <div class="navbar-header">
                <!--add logo-->
                 <a class="navbar-brand" href="#">
-                    <img src="https://www.visitbritain.org/sites/all/themes/vb_corporate/logo.png" alt="Visitor Numbers 2015" height="50px">
+                    <!--<img src="https://www.visitbritain.org/sites/all/themes/vb_corporate/logo.png" alt="Visitor Numbers 2015" height="50px">-->
+                    <img src="{{ url_for ('static', filename='logo2.png')}}" alt="Visitor Numbers 2015">
+
                 </a>
                <!--button instead of menu-->
                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
