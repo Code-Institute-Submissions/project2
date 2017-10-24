@@ -66,6 +66,7 @@ function makeGraphs(error, attractionsJson) {
    var totalVisitors2011ND = dc.numberDisplay("#total-2011visitors-nd");
    var ChargeChart = dc.pieChart("#fees-chart");
 
+   //asign properties and values to charts
    selectField = dc.selectMenu("#menu-select")
        .dimension(cruDim)
        .group(totalVisitorsByCru);
